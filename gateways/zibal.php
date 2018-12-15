@@ -74,10 +74,10 @@ class EDD_Zibal_Gateway {
 
 		if ( $payment ) {
 
-			//$zibaldirect = ( isset( $edd_options[ $this->keyname . '_zibaldirect' ] ) ? $edd_options[ $this->keyname . '_zibaldirect' ] : false );
-			//if ( $zibaldirect )
-				//$redirect = 'https://www.zarinpal.com/pg/StartPay/%s/ZarinGate';
-			//else
+			$zibaldirect = ( isset( $edd_options[ $this->keyname . '_zibaldirect' ] ) ? $edd_options[ $this->keyname . '_zibaldirect' ] : false );
+			if ( $zibaldirect )
+				$redirect = 'https://gateway.zibal.ir/start/%s/direct';
+			else
 			$redirect = 'https://gateway.zibal.ir/start/%s';
 
 			$merchant = ( isset( $edd_options[ $this->keyname . '_merchant' ] ) ? $edd_options[ $this->keyname . '_merchant' ] : '' );
@@ -224,10 +224,10 @@ class EDD_Zibal_Gateway {
 				'size' 			=>	'regular'
 			),
 			$this->keyname . '_zibaldirect' 		=>	array(
-				'id' 			=>	$this->keyname . '_zaringate',
+				'id' 			=>	$this->keyname . '_zibaldirect',
 				'name' 			=>	'استفاده از زیبال دایرکت (نیاز به تماس با پشتیبانی)',
 				'type' 			=>	'checkbox',
-				'desc' 			=>	'استفاده از درگاه مستقیم زیبال)'
+				'desc' 			=>	'استفاده از درگاه مستقیم زیبال'
 			),
 			
 			$this->keyname . '_label' 	=>	array(
