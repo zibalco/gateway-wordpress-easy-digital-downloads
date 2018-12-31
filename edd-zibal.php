@@ -3,7 +3,7 @@
  * Plugin Name: Zibal for EDD
  * Author: Mohammad Zamanzadeh
  * Description: این افزونه، درگاه پرداخت آنلاین زیبال را فعال میکند
- * Version: 1.0
+ * Version: 1.2
  * Author URI: http://zibal.ir
  */
 
