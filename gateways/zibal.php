@@ -95,7 +95,7 @@ class EDD_Zibal_Gateway {
 				'callbackUrl' 			=>	$callback
 			) );
 
-			$ch = curl_init( 'https://gateway.zibal.ir/request' );
+			$ch = curl_init( 'https://gateway.zibal.ir/v1/request' );
 			curl_setopt( $ch, CURLOPT_USERAGENT, 'Zibal Rest Api v1' );
 			curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'POST' );
 			curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
@@ -142,8 +142,8 @@ class EDD_Zibal_Gateway {
 	public function verify() {
 		global $edd_options;
 
-		if ( isset( $_POST['trackId'] ) ) {
-			$authority = sanitize_text_field( $_POST['trackId'] );
+		if ( isset( $_GET['trackId'] ) ) {
+			$authority = sanitize_text_field( $_GET['trackId'] );
 			@ session_start();
 			$payment = edd_get_payment( $_SESSION['zibal_payment'] );
 			unset( $_SESSION['zibal_payment'] );
@@ -163,7 +163,7 @@ class EDD_Zibal_Gateway {
 				'trackId' 				=>	$authority
 			) );
 
-			$ch = curl_init( 'https://gateway.zibal.ir/verify' );
+			$ch = curl_init( 'https://gateway.zibal.ir/v1/verify' );
 			curl_setopt( $ch, CURLOPT_USERAGENT, 'Zibal Rest Api v1' );
 			curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'POST' );
 			curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );

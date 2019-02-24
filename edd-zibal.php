@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Zibal for EDD
+ * Plugin Name: Zibal for Easy Digital Downloads
  * Author: Mohammad Zamanzadeh
  * Description: این افزونه، درگاه پرداخت آنلاین زیبال را فعال میکند
  * Version: 1.2
